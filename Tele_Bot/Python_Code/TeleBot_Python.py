@@ -10,6 +10,7 @@ bot = Bot(token=BOT_TOKEN)
 
 
 async def main() -> None:
+    print("Bot started")
     from TeleBot_Hendlers import dp
     await dp.start_polling(bot)
 
