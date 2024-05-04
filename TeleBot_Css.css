@@ -1,17 +1,46 @@
-h1 {
-    width: 100px;
-    align-content: center;
-}
-body {
-    background-color: rgb(101, 87, 255);
+* {
+    margin: 0;
+    padding: 0;
 }
 
 .card {
-    width: 100%;
+    max-width: 520px;
     height: auto;
-    align-content: center;
+    margin: 0 auto;
+    background-color: #363636;
 }
 
-h4 {
-    width: 200px;
+.product {
+    width: 90%;
+    height: auto;
+    justify-content: space-between;
+}
+
+.burger {
+width: 150px;
+height: auto;
+margin: 10px;
+background-color: #fff;
+border-radius: 15px;
+display: inline-block;
+
+}
+
+.burger p{
+    width: 150px;
+    padding-left: 25px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.burger button{
+    width: 80px;
+    height: 25px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    background-color: orange;
+    font-weight: 600;
+    font-size: 15px;
+    margin: 10px 35px;
 }
