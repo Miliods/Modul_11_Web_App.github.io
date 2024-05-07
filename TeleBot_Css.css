@@ -6,13 +6,13 @@
 body {
     color: var(--tg-theme-text-color);
     background-color: var(--tg-theme-bg-color);
+    border: none;
 }
 
 .card {
     max-width: 360px;
     height: auto;
-    margin: 0 auto;
-    
+    margin: 0 auto; 
 }
 
 .product {
