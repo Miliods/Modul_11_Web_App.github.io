@@ -13,5 +13,6 @@ let btn3 = document.getElementBuId("btn3")
 
 
 btn1.addEventListener("click", function(){
-    tg.MainButton.setText("btn1 clicked")
+    tg.MainButton.setText("btn1 clicked"):
+    tg.MainButton.show();
 })
