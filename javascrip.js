@@ -16,19 +16,19 @@ let btn6 = document.getElementById("btn6");
 
 btn1.addEventListener("click", function () {
         tg.MainButton.setText("Burger qoshildi!");
-        item = "Burger $4.99";
+        item = "Name : Burger\n Price : $4.99";
         tg.MainButton.show();
 });
 
 btn2.addEventListener("click", function () {
         tg.MainButton.setText("Hot-Dog qosholdi!");
-        item = "Hot-Dog $3.99";
+        item = "Name : Hot-Dog\n Price : $3.99";
         tg.MainButton.show();
 });
 
 btn3.addEventListener("click", function () {
         tg.MainButton.setText("Pizza qoshildi!");
-        item = "Pizza $5.99";
+        item = "Name : Pizza\n Price : $5.99";
         tg.MainButton.show();
 });
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
