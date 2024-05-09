@@ -19,7 +19,7 @@ btn1.addEventListener("click", function(){
 		tg.MainButton.hide();
 	}
 	else {
-		tg.MainButton.setText("Вы выбрали товар 1!");
+		tg.MainButton.setText("Burger qoshildi!");
 		item = "1";
 		tg.MainButton.show();
 	}
@@ -30,7 +30,7 @@ btn2.addEventListener("click", function(){
 		tg.MainButton.hide();
 	}
 	else {
-		tg.MainButton.setText("Вы выбрали товар 2!");
+		tg.MainButton.setText("Hot-Dog qosholdi!");
 		item = "2";
 		tg.MainButton.show();
 	}
@@ -41,7 +41,7 @@ btn3.addEventListener("click", function(){
 		tg.MainButton.hide();
 	}
 	else {
-		tg.MainButton.setText("Вы выбрали товар 3!");
+		tg.MainButton.setText("Pizza qoshildi!");
 		item = "3";
 		tg.MainButton.show();
 	}
