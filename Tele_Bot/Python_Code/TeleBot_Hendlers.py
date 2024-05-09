@@ -11,7 +11,7 @@ async def start(message: types.Message):
     await message.answer("hello", reply_markup=app_kb)
 
 
-@dp.message(F.data)
+@dp.message(F.func(lambda message: message.web_app_data.data == "TestMessage"))
 async def get_btn(message: types.Message):
     print("ok")
     await message.answer(message.web_app_data.data)
