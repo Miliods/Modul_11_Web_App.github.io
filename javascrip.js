@@ -15,33 +15,21 @@ let btn5 = document.getElementById("btn5");
 let btn6 = document.getElementById("btn6");
 
 btn1.addEventListener("click", function () {
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    } else {
         tg.MainButton.setText("Burger qoshildi!");
-        item = "1";
+        item = "Burger $4.99";
         tg.MainButton.show();
-    }
 });
 
 btn2.addEventListener("click", function () {
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    } else {
         tg.MainButton.setText("Hot-Dog qosholdi!");
-        item = "2";
+        item = "Hot-Dog $3.99";
         tg.MainButton.show();
-    }
 });
 
 btn3.addEventListener("click", function () {
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    } else {
         tg.MainButton.setText("Pizza qoshildi!");
-        item = "3";
+        item = "Pizza $5.99";
         tg.MainButton.show();
-    }
 });
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
     tg.sendData(item);
