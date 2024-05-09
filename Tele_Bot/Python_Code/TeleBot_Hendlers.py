@@ -13,5 +13,5 @@ async def start(message: types.Message):
 
 @dp.message(F.data)
 async def get_btn(message: types.Message):
-    await message.answer(message.text)
+    await message.answer(message.web_app_data.data)
     
