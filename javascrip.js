@@ -10,7 +10,7 @@ let add_btn1 = document.getElementById("add_btn1");
 let remove_btn2 = document.getElementById("remove_btn2");
 let add_btn2 = document.getElementById("add_btn2");
 
-let remove_btn3 = document.getElementById("remove_btn1");
+let remove_btn3 = document.getElementById("remove_btn3");
 let add_btn3 = document.getElementById("add_btn3");
 
 
