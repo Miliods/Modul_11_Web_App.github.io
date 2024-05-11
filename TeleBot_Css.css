@@ -25,7 +25,7 @@ body {
 width: 150px;
 height: auto;
 margin: 10px;
-background-color: #fff;
+background-color: var(--tg-theme-bg-color);
 border-radius: 15px;
 display: inline-block;
 
@@ -33,14 +33,16 @@ display: inline-block;
 
 .burger p{
     width: 150px;
-    padding-left: 25px;
     font-weight: 600;
     font-size: 15px;
+    color: #fff;
+    color: var(--tg-theme-text-color);
+    text-align: center;
 }
 
 .burger button{
     color: var(--tg-theme-text-color);
-    margin: 10px 50px;
+    margin-left: 20px;
 }
 
 .btn {
@@ -56,6 +58,6 @@ display: inline-block;
 	transition: background .2s linear;
 }
 
-button {
-
+.num {
+    display: none;
 }

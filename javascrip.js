@@ -4,37 +4,68 @@ tg.expand();
 tg.MainButton.textColor = "#FFFFFF"
 tg.MainButton.color = "#FC3005"
 
-let rbtn1 = document.getElementById("rbtn1");
-let abtn1 = document.getElementById("abtn1");
+let remove_btn1 = document.getElementById("remove_btn1");
+let add_btn1 = document.getElementById("add_btn1");
 
-let rbtn2 = document.getElementById("rbtn2");
-let abtn2 = document.getElementById("abtn2");
+let remove_btn2 = document.getElementById("remove_btn2");
+let add_btn2 = document.getElementById("add_btn2");
 
-let rbtn3 = document.getElementById("rbtn3");
-let abtn3 = document.getElementById("abtn3");
+let remove_btn3 = document.getElementById("remove_btn1");
+let add_btn3 = document.getElementById("add_btn3");
 
-let rbtn4 = document.getElementById("rbtn4");
-let abtn4 = document.getElementById("abtn4");
 
 let item = " "
 let num_count = 0
+let num_count1 = 0
+let num_count2 = 0
 
 number = document.getElementById("count");
+number1 = document.getElementById("count1");
+number2 = document.getElementById("count2");
 
-abtn1.addEventListener("click", function () {
+add_btn1.addEventListener("click", function () {
 
     number.innerText = num_count += 1;
     number.style.display = "block";
 })
 
+remove_btn1.addEventListener("click", function () {
+
+    number.innerText = num_count -= 1;
+    number.style.display = "block";
+})
+
+add_btn2.addEventListener("click", function () {
+
+    number1.innerText = num_count1 += 1;
+    number1.style.display = "block";
+})
+
+remove_btn2.addEventListener("click", function () {
+
+    number1.innerText = num_count1 -= 1;
+    number1.style.display = "block";
+})
+
+add_btn3.addEventListener("click", function () {
+
+    number2.innerText = num_count2 += 1;
+    number2.style.display = "block";
+})
+
+remove_btn3.addEventListener("click", function () {
+
+    number2.innerText = num_count2 -= 1;
+    number2.style.display = "block";
+})
 
 btn1.addEventListener("click", function () {
-    tg.MainButton.setText("Burger ");
+    tg.MainButton.setText("Burger");
     item = "Burger/$4.99";
     tg.MainButton.show();
 });
 btn2.addEventListener("click", function () {
-    tg.MainButton.setText("KFC");
+    tg.MainButton.setText("Hot-Dog");
     item = "Hot-Dog/$3.99";
     tg.MainButton.show();
 });
