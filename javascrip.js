@@ -14,6 +14,8 @@ let remove_btn3 = document.getElementById("remove_btn3");
 let add_btn3 = document.getElementById("add_btn3");
 
 let item = " ";
+let item1 = " ";
+let item2 = " ";
 let num_count = 0;
 let num_count1 = 0;
 let num_count2 = 0;
@@ -42,7 +44,7 @@ remove_btn1.addEventListener("click", function () {
 
 add_btn2.addEventListener("click", function () {
     tg.MainButton.setText("Hot-Dog");
-    item = "Hot-Dog/3/" + num_count1.innerText;
+    item1 = "Hot-Dog/3/" + num_count1.innerText;
     tg.MainButton.show();
     number1.innerText = ++num_count1;
     number1.style.display = "block";
@@ -53,7 +55,7 @@ remove_btn2.addEventListener("click", function () {
         number1.innerText = --num_count1;
     }
     tg.MainButton.setText("Hot-Dog");
-    item = "Hot-Dog/3/" + num_count1.innerText;
+    item1 = "Hot-Dog/3/" + num_count1.innerText;
     tg.MainButton.show();
 
     number1.style.display = "block";
@@ -61,7 +63,7 @@ remove_btn2.addEventListener("click", function () {
 
 add_btn3.addEventListener("click", function () {
     tg.MainButton.setText("Pizza");
-    item = "Pizza/5/" + num_count2.innerText;
+    item2 = "Pizza/5/" + num_count2.innerText;
     tg.MainButton.show();
     number2.innerText = ++num_count2;
     number2.style.display = "block";
@@ -72,7 +74,7 @@ remove_btn3.addEventListener("click", function () {
         number2.innerText = --num_count2;
     }
     tg.MainButton.setText("Pizza");
-    item = "Pizza/5/" + num_count2.innerText;
+    item2 = "Pizza/5/" + num_count2.innerText;
     tg.MainButton.show();
     number2.style.display = "block";
 });
