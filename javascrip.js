@@ -36,40 +36,45 @@ remove_btn1.addEventListener("click", function () {
         number.innerText = num_count -= 1;
     }
     tg.MainButton.setText("Burger");
-    item = "Burger/4.99";
+    item = "Burger/4.99/" + num_count.innerText;
     tg.MainButton.show();
     number.style.display = "block";
 })
 
 add_btn2.addEventListener("click", function () {
     tg.MainButton.setText("Hot-Dog");
-    item = "Hot-Dog/3.99";
+    item = "Hot-Dog/3.99/" + num_count1.innerText;
     tg.MainButton.show();
     number1.innerText = num_count1 += 1;
     number1.style.display = "block";
 })
 
 remove_btn2.addEventListener("click", function () {
+    if (num_count > 0) {
+        number1.innerText = num_count1 -= 1;
+    }
     tg.MainButton.setText("Hot-Dog");
-    item = "Hot-Dog/3.99";
+    item = "Hot-Dog/3.99/" + num_count1.innerText;
     tg.MainButton.show();
-    number1.innerText = num_count1 -= 1;
+
     number1.style.display = "block";
 })
 
 add_btn3.addEventListener("click", function () {
     tg.MainButton.setText("Pizza");
-    item = "Pizza/5.99";
+    item = "Pizza/5.99" + num_count1.innerText;
     tg.MainButton.show();
     number2.innerText = num_count2 += 1;
     number2.style.display = "block";
 })
 
 remove_btn3.addEventListener("click", function () {
+    if (num_count > 0) {
+        number2.innerText = num_count2 -= 1;
+    }
     tg.MainButton.setText("Pizza");
     item = "Pizza/5.99";
     tg.MainButton.show();
-    number2.innerText = num_count2 -= 1;
     number2.style.display = "block";
 })
 
