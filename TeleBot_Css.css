@@ -35,7 +35,7 @@ display: inline-block;
     width: 150px;
     font-weight: 600;
     font-size: 15px;
-    color: #fff;
+    color: #ffffff;
     color: var(--tg-theme-text-color);
     text-align: center;
 }
