@@ -25,17 +25,19 @@ number2 = document.getElementById("count2");
 
 add_btn1.addEventListener("click", function () {
     tg.MainButton.setText("Burger");
-    item = "Burger/$4.99";
+    item = "Burger/$4.99/" + num_count.innerText;
     tg.MainButton.show();
     number.innerText = num_count += 1;
     number.style.display = "block";
 })
 
 remove_btn1.addEventListener("click", function () {
+    if (n_count1 > 0) {
+        number.innerText = num_count -= 1;
+    }
     tg.MainButton.setText("Burger");
     item = "Burger/$4.99";
     tg.MainButton.show();
-    number.innerText = num_count -= 1;
     number.style.display = "block";
 })
 
