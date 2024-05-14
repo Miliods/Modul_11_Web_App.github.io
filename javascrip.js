@@ -24,7 +24,7 @@ let number2 = document.getElementById("count2");
 
 add_btn1.addEventListener("click", function () {
     tg.MainButton.setText("Burger");
-    item = "Burger/4.99/" + num_count.innerText;
+    item = "Burger/4/" + num_count.innerText;
     tg.MainButton.show();
     number.innerText = ++num_count;
     number.style.display = "block";
@@ -35,14 +35,14 @@ remove_btn1.addEventListener("click", function () {
         number.innerText = --num_count;
     }
     tg.MainButton.setText("Burger");
-    item = "Burger/4.99/" + num_count.innerText;
+    item = "Burger/4/" + num_count.innerText;
     tg.MainButton.show();
     number.style.display = "block";
 });
 
 add_btn2.addEventListener("click", function () {
     tg.MainButton.setText("Hot-Dog");
-    item = "Hot-Dog/3.99/" + num_count1.innerText;
+    item = "Hot-Dog/3/" + num_count1.innerText;
     tg.MainButton.show();
     number1.innerText = ++num_count1;
     number1.style.display = "block";
@@ -53,7 +53,7 @@ remove_btn2.addEventListener("click", function () {
         number1.innerText = --num_count1;
     }
     tg.MainButton.setText("Hot-Dog");
-    item = "Hot-Dog/3.99/" + num_count1.innerText;
+    item = "Hot-Dog/3/" + num_count1.innerText;
     tg.MainButton.show();
 
     number1.style.display = "block";
@@ -61,7 +61,7 @@ remove_btn2.addEventListener("click", function () {
 
 add_btn3.addEventListener("click", function () {
     tg.MainButton.setText("Pizza");
-    item = "Pizza/5.99/" + num_count2.innerText;
+    item = "Pizza/5/" + num_count2.innerText;
     tg.MainButton.show();
     number2.innerText = ++num_count2;
     number2.style.display = "block";
@@ -72,7 +72,7 @@ remove_btn3.addEventListener("click", function () {
         number2.innerText = --num_count2;
     }
     tg.MainButton.setText("Pizza");
-    item = "Pizza/5.99/" + num_count2.innerText;
+    item = "Pizza/5/" + num_count2.innerText;
     tg.MainButton.show();
     number2.style.display = "block";
 });
