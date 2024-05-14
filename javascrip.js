@@ -50,7 +50,7 @@ add_btn2.addEventListener("click", function () {
 })
 
 remove_btn2.addEventListener("click", function () {
-    if (num_count > 0) {
+    if (num_count1 > 0) {
         number1.innerText = num_count1 -= 1;
     }
     tg.MainButton.setText("Hot-Dog");
@@ -69,7 +69,7 @@ add_btn3.addEventListener("click", function () {
 })
 
 remove_btn3.addEventListener("click", function () {
-    if (num_count > 0) {
+    if (num_count2 > 0) {
         number2.innerText = num_count2 -= 1;
     }
     tg.MainButton.setText("Pizza");
