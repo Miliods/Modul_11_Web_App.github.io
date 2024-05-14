@@ -32,7 +32,7 @@ add_btn1.addEventListener("click", function () {
 })
 
 remove_btn1.addEventListener("click", function () {
-    if (n_count1 > 0) {
+    if (num_count > 0) {
         number.innerText = num_count -= 1;
     }
     tg.MainButton.setText("Burger");
