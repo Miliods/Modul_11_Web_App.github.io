@@ -15,7 +15,7 @@ async def start(message: types.Message):
 async def get_btn(msg: types.Message):
     text = msg.web_app_data.data
     title = text.split('/')[0]
-    price = int(text.split('/')[1])
+    price = float(text.split('/')[1])
     quantity = int(text.split('/')[2])
     await msg.answer(text=f"{title}\n"
                           f"{quantity} pcs \n"
