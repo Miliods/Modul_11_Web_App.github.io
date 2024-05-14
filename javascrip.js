@@ -62,7 +62,7 @@ remove_btn2.addEventListener("click", function () {
 
 add_btn3.addEventListener("click", function () {
     tg.MainButton.setText("Pizza");
-    item = "Pizza/5.99" + num_count1.innerText;
+    item = "Pizza/5.99" + num_count2.innerText;
     tg.MainButton.show();
     number2.innerText = num_count2 += 1;
     number2.style.display = "block";
@@ -73,7 +73,7 @@ remove_btn3.addEventListener("click", function () {
         number2.innerText = num_count2 -= 1;
     }
     tg.MainButton.setText("Pizza");
-    item = "Pizza/5.99";
+    item = "Pizza/5.99" + num_count2.innerText;;
     tg.MainButton.show();
     number2.style.display = "block";
 })
