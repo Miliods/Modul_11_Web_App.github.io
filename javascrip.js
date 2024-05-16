@@ -69,7 +69,7 @@ remove_btn3.addEventListener("click", function () {
     }
 
     count3.style.display = "inline-block";
-    item3 = "Pizza/3.99/" + count3.innerText;
+    item3 = "Pizza/5.99/" + count3.innerText;
 
     tg.MainButton.setText("Pizza");
     tg.MainButton.show();
@@ -84,38 +84,6 @@ add_btn3.addEventListener("click", function (){
     tg.MainButton.setText("Pizza");
     tg.MainButton.show();
 });
-
-
-count4 = document.getElementById("count4");
-rbtn4 = document.getElementById("rbtn4");
-abtn4 = document.getElementById("abtn4");
-let item4 = " ";
-let n_count4 = 0;
-rbtn4.addEventListener("click", function () {
-    if (n_count4 > 0) {
-        count4.innerText = n_count4 -= 1;
-    }
-
-    count4.style.display = "inline-block";
-    item4 = "Pizza/5.99/" + count4.innerText;
-
-    tg.MainButton.setText("Pizza");
-    tg.MainButton.show();
-});
-
-
-
-abtn4.addEventListener("click", function (){
-    count4.innerText = n_count4 += 1;
-    count4.style.display = "inline-block";
-    item4 = "Lavash/5/" + count4.innerText;
-
-    tg.MainButton.setText("Lavash");
-    tg.MainButton.show();
-});
-
-
-
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
     data = item1 + "|" + item2 +  "|" + item3 + "|" + item4
     tg.sendData(data);
