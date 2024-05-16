@@ -14,14 +14,21 @@ async def start(message: types.Message):
 @dp.message(F.func(lambda msg: msg.web_app_data.data))
 async def get_btn(msg: types.Message):
     text = msg.web_app_data.data
-    print(text)
-    title = text.split('/')[0]
-    price = float(text.split('/')[1])
-    quantity = float(text.split('/')[2])
+    narxlari = 0
 
-    await msg.answer(text=f"{title}\n"
-                          f"{quantity} pcs \n"
-                          f"total cost : {quantity * price}$")
+    products = text.split("|")
+    for i in range(len(products)):
+        if len(products[i]) >= 2:
+            title = products[i].split('/')[0]
+            price = float(products[i].split('/')[1])
+            quantity = int(products[i].split('/')[2])
+
+            await msg.answer(text=f"Nomi: {title}\n"
+                                  f"Narxi: {price}\n"
+                                  f"Soni: {quantity}\n"
+                                  f"Umumiy narxi: {quantity * price}$")
+            narxlari += price * quantity
+    await msg.answer(text=f"Mahsulot uchun tolov qiling: {round(narxlari, 2)}$", reply_markup=buy_ikb)
 
 
     
