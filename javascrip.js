@@ -2,83 +2,121 @@ let tg = window.Telegram.WebApp;
 tg.expand();
 
 tg.MainButton.textColor = "#FFFFFF"
-tg.MainButton.color = "#3b3b3b"
+tg.MainButton.color = "#FC3005"
 
-let remove_btn1 = document.getElementById("remove_btn1");
-let add_btn1 = document.getElementById("add_btn1");
 
-let remove_btn2 = document.getElementById("remove_btn2");
-let add_btn2 = document.getElementById("add_btn2");
+let item1 = " "
+let n_count1 = 0
 
-let remove_btn3 = document.getElementById("remove_btn3");
-let add_btn3 = document.getElementById("add_btn3");
 
-let item = " ";
-let item1 = " ";
-let item2 = " ";
-let num_count = 0;
-let num_count1 = 0;
-let num_count2 = 0;
-
-let number = document.getElementById("count");
-let number1 = document.getElementById("count1");
-let number2 = document.getElementById("count2");
+let count1 = document.getElementById("count1");
+let remove_btn1 = document.getElementById("rbtn1");
+let add_btn1 = document.getElementById("abtn1");
 
 add_btn1.addEventListener("click", function () {
+    count1.innerText = n_count1 += 1;
+    count1.style.display = "inline-block";
     tg.MainButton.setText("Burger");
-    item = "Burger/4.99/" + num_count.innerText;
     tg.MainButton.show();
-    number.innerText = ++num_count;
-    number.style.display = "block";
-});
+    item1 = "Burger/3.49/" + count1.innerText;
 
+});
 remove_btn1.addEventListener("click", function () {
-    if (num_count > 0) {
-        number.innerText = --num_count;
+    if (n_count1 > 0) {
+        count1.innerText = n_count1 -= 1;
     }
+    count1.style.display = "inline-block";
+    item1 = "Burger/3.49/" + count1.innerText;
     tg.MainButton.setText("Burger");
-    item = "Burger/4.99/" + num_count.innerText;
     tg.MainButton.show();
-    number.style.display = "block";
 });
 
-add_btn2.addEventListener("click", function () {
-    tg.MainButton.setText("Hot-Dog");
-    item1 = "Hot-Dog/3.99/" + num_count1.innerText;
-    tg.MainButton.show();
-    number1.innerText = ++num_count1;
-    number1.style.display = "block";
-});
-
+let count2 = document.getElementById("count2");
+let remove_btn2 = document.getElementById("rbtn2");
+let add_btn2 = document.getElementById("abtn2");
+let item2 = " ";
+let n_count2 = 0;
 remove_btn2.addEventListener("click", function () {
-    if (num_count1 > 0) {
-        number1.innerText = --num_count1;
+    if (n_count2 > 0) {
+        count2.innerText = n_count2 -= 1;
     }
+
+    count2.style.display = "inline-block";
+    item2 = "Hot-Dog/2.48/" + count2.innerText;
     tg.MainButton.setText("Hot-Dog");
-    item1 = "Hot-Dog/3.99/" + num_count1.innerText;
     tg.MainButton.show();
-
-    number1.style.display = "block";
 });
 
-add_btn3.addEventListener("click", function () {
-    tg.MainButton.setText("Pizza");
-    item2 = "Pizza/3.99/" + num_count2.innerText;
+
+
+add_btn2.addEventListener("click", function (){
+    count2.innerText = n_count2 += 1;
+    count2.style.display = "inline-block";
+    item2 = "Hot-Dog/2.48/" + count2.innerText;
+    tg.MainButton.setText("Hot-Dog");
     tg.MainButton.show();
-    number2.innerText = ++num_count2;
-    number2.style.display = "block";
 });
 
+
+let count3 = document.getElementById("count3");
+let remove_btn3 = document.getElementById("rbtn3");
+let add_btn3 = document.getElementById("abtn3");
+let item3 = " ";
+let n_count3 = 0;
 remove_btn3.addEventListener("click", function () {
-    if (num_count2 > 0) {
-        number2.innerText = --num_count2;
+    if (n_count3 > 0) {
+        count3.innerText = n_count3 -= 1;
     }
+
+    count3.style.display = "inline-block";
+    item3 = "Pizza/3.99/" + count3.innerText;
+
     tg.MainButton.setText("Pizza");
-    item2 = "Pizza/3.99/" + num_count2.innerText;
     tg.MainButton.show();
-    number2.style.display = "block";
 });
+
+
+
+add_btn3.addEventListener("click", function (){
+    count3.innerText = n_count3 += 1;
+    count3.style.display = "inline-block";
+    item3 = "Pizza/3.99/" + count3.innerText;
+    tg.MainButton.setText("Pizza");
+    tg.MainButton.show();
+});
+
+
+count4 = document.getElementById("count4");
+rbtn4 = document.getElementById("rbtn4");
+abtn4 = document.getElementById("abtn4");
+let item4 = " ";
+let n_count4 = 0;
+rbtn4.addEventListener("click", function () {
+    if (n_count4 > 0) {
+        count4.innerText = n_count4 -= 1;
+    }
+
+    count4.style.display = "inline-block";
+    item4 = "Lavash/5/" + count4.innerText;
+
+    tg.MainButton.setText("Lavash");
+    tg.MainButton.show();
+});
+
+
+
+abtn4.addEventListener("click", function (){
+    count4.innerText = n_count4 += 1;
+    count4.style.display = "inline-block";
+    item4 = "Lavash/5/" + count4.innerText;
+
+    tg.MainButton.setText("Lavash");
+    tg.MainButton.show();
+});
+
+
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
-    tg.sendData(item);
+    data = item1 + "|" + item2 +  "|" + item3 + "|" + item4
+    tg.sendData(data);
 });
