@@ -1,18 +1,21 @@
 import asyncio
-
-from aiogram import Bot
 from dotenv import load_dotenv
-import os
+
+# from aiogram.client.session.aiohttp import AiohttpSession
+
 
 load_dotenv()
-BOT_TOKEN = os.getenv('BOT_TOKEN')
-bot = Bot(token=BOT_TOKEN)
+# session = AiohttpSession(proxy="http://proxy.server:3128")
+# bot = Bot(token=BOT_TOKEN, session=session)
 
 
-async def main() -> None:
-    print("Bot started")
+
+async def main():
+    print("Starting .......")
     from TeleBot_Hendlers import dp
+    from TeleBot_Hendlers import bot
     await dp.start_polling(bot)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     asyncio.run(main())

@@ -1,34 +1,59 @@
-from aiogram import Dispatcher, types, F
-from aiogram.filters import CommandStart
+import os
+import asyncio
+from aiogram import Bot, Dispatcher, F
+from aiogram.filters import CommandStart, Command
+from aiogram.types import Message, LabeledPrice, PreCheckoutQuery, SuccessfulPayment
+from aiogram.fsm.storage.memory import MemoryStorage
+from keyboards import app_kb, buy_ikb
+from dotenv import load_dotenv
 
-from Tele_Bot.Python_Code.keyboards import app_kb, buy_ikb
+load_dotenv()
+PROVIDER_TOKEN = os.getenv('PROVIDER_TOKEN')
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
-dp = Dispatcher()
+bot = Bot(token=BOT_TOKEN)
+dp = Dispatcher(storage=MemoryStorage())
 
 
 @dp.message(CommandStart())
-async def start(message: types.Message):
-    await message.answer("hello", reply_markup=app_kb)
+async def start(msg: Message):
+    await msg.answer("Salom", reply_markup=app_kb)
+
+
+@dp.pre_checkout_query()
+async def pre_checkout_query(checkout_query: PreCheckoutQuery):
+    await bot.answer_pre_checkout_query(checkout_query.id, ok=True)
 
 
 @dp.message(F.func(lambda msg: msg.web_app_data.data))
-async def get_btn(msg: types.Message):
+async def get_btn(msg: Message):
     text = msg.web_app_data.data
-    narxlari = 0
-
     products = text.split("|")
-    for i in range(len(products)):
-        if len(products[i]) >= 2:
-            title = products[i].split('/')[0]
-            price = float(products[i].split('/')[1])
-            quantity = int(products[i].split('/')[2])
+    prices = []
 
-            await msg.answer(text=f"Nomi: {title}\n"
-                                  f"Narxi: {price}\n"
-                                  f"Soni: {quantity}\n"
-                                  f"Umumiy narxi: {quantity * price}$")
-            narxlari += price * quantity
-    await msg.answer(text=f"Mahsulot uchun tolov qiling: {round(narxlari, 2)}$", reply_markup=buy_ikb)
+    for product in products:
+        if len(product.split("/")) >= 3:
+            title, price, quantity = product.split('/')
+            price = int(price)
+            quantity = int(quantity)
+            total_price = price * quantity * 100  # converting to smallest currency unit
+            prices.append(LabeledPrice(label=f"{title} | {quantity}", amount=total_price))  # corrected this line
+
+    if not prices:
+        await msg.answer("Savatchangiz bo'sh!")
+        return
+
+    await bot.send_invoice(
+        chat_id=msg.chat.id,
+        title="Telegram bot orqali to'lov!",
+        description="Telegram bot orqali to'lov qilishni o'rganayapmiz!",
+        provider_token=PROVIDER_TOKEN,
+        currency="UZS",
+        payload="Ichki malumot",
+        prices=prices
+    )
 
 
-    
+@dp.message(F.successful_payment())
+async def successful_payment(msg: Message):
+    await msg.answer("To'lov muvaffaqiyatli amalga oshirildi! Rahmat!")
